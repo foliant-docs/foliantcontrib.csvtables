@@ -16,7 +16,7 @@ setup(
     description=SHORT_DESCRIPTION,
     long_description=LONG_DESCRIPTION,
     long_description_content_type='text/markdown',
-    version='1.0.0',
+    version='1.0.1',
     author='Anton Bukhtiyarov',
     author_email='apkraft@gmail.com',
     url='https://github.com/foliant-docs/foliantcontrib.csvtables',
@@ -24,7 +24,7 @@ setup(
     license='MIT',
     platforms='any',
     install_requires=[
-        'foliant>=1.0.8'
+        'foliant>=1.0.8',
         'foliantcontrib.utils.combined_options>=1.0.0'
     ],
     classifiers=[
