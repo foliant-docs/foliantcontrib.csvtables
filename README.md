@@ -1,4 +1,4 @@
-# csv tables for Foliant
+# CSVTables for Foliant
 
 This preprocessor converts csv data to markdown tables.
 
