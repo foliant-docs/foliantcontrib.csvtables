@@ -7,7 +7,6 @@ from foliant.preprocessors.base import BasePreprocessor
 from foliant.preprocessors.utils.combined_options import (Options, CombinedOptions)
 from foliant.utils import output
 
-
 class Preprocessor(BasePreprocessor):
     defaults = {
         'delimiter': ';',
@@ -34,14 +33,14 @@ class Preprocessor(BasePreprocessor):
         for row in range(len(csv_data)):
             string = ''
             for i, item in enumerate(csv_data[row]):
-                string = string + ''.join(('|', options['padding_symbol']*options['paddings_number'], item, ' ' * (self._column_widths[i] - len(item)), options['padding_symbol']*options['paddings_number']))
+                string = string + ''.join(('|', options['padding_symbol']*options['paddings_number'], item, options['padding_symbol'][::-1]*options['paddings_number'], ' ' * (self._column_widths[i] - len(item))))
             string = string + '|\n'
             table_data.append(string)
         string = ''
         for width in self._column_widths:
             string = string + ''.join(('|', '-' * (width+(len(options['padding_symbol'])*options['paddings_number']*2))))
         string = string + '|\n'
-        table_data.insert(2, string)
+        table_data.insert(1, string)
         table_data.append('')
         for item in table_data:
             self._table += item
@@ -55,7 +54,7 @@ class Preprocessor(BasePreprocessor):
             if 'src' in options:
                 try:
                     with open(self.working_dir / options['src'], 'r') as f:
-                        body = f.read()
+                        body = f.read().strip()
                 except:
                     output(f"Cannot open file {self.working_dir / options['src']}, skipping",
                            quiet=self.quiet)
