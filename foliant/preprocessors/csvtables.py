@@ -3,9 +3,11 @@ Preprocessor for Foliant documentation authoring tool.
 Converts csv data into markdown tables.
 '''
 
+from foliant.contrib.combined_options import CombinedOptions
+from foliant.contrib.combined_options import Options
 from foliant.preprocessors.base import BasePreprocessor
-from foliant.preprocessors.utils.combined_options import (Options, CombinedOptions)
 from foliant.utils import output
+
 
 class Preprocessor(BasePreprocessor):
     defaults = {
