@@ -1,3 +1,5 @@
+[![](https://img.shields.io/pypi/v/foliantcontrib.csvtables.svg)](https://pypi.org/project/foliantcontrib.csvtables/) [![](https://img.shields.io/github/v/tag/foliant-docs/foliantcontrib.csvtables.svg?label=GitHub)](https://github.com/foliant-docs/foliantcontrib.csvtables)
+
 # CSVTables for Foliant
 
 This preprocessor converts csv data to markdown tables.
